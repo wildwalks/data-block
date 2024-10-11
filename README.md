@@ -652,7 +652,7 @@ $posts = Block::fromJsonUrl($url) // Load the Block from the remote URL
     ->getBlock("posts") // get the `posts` as Block object
     ->where(
         field:"tags",
-        operator: "in",
+        operator: "has",
         value: "love",
         preseveKeys: false,
     ) // filter the posts, selecting only the posts with tags "love"
