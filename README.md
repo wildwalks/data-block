@@ -409,7 +409,7 @@ If you want to avoid preserving the keys and set new integer keys starting from 
 ```
 
 With `where()` method you can use different operators, like "==", ">", "<" etc.
-You can use also the `in` operator in the case your nested data contains arrays.
+You can use also the `in` operator to test if your scaler data is in an array. The `has` operator is helpful in the case your nested data contains arrays and you want to see if it contains a specific value.
 For example if you have posts and each post can have multiple tags, you can filter posts with a specific tag:
 
 ```php
@@ -418,7 +418,7 @@ $posts = Block
     ::fromJsonUrl($url)
     ->getBlock("posts");
 
-$lovePosts = $posts->where("tags", "in", "love");
+$lovePosts = $posts->where("tags", "has", "love");
 ```
 
 ### The `orderBy()` method
